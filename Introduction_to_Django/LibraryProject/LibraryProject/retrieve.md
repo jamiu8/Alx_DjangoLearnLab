@@ -1,6 +1,17 @@
-# this is my code to retrieve
- 
-Book.objects.all()        
- 
 
-# result is <QuerySet [<Book: Books are 1984 by George Orwell realeased in 1949>, <Book: Books are nuisance by jamiu realeased in 2001>]>
+---
+
+### **`retrieve.md`**
+```markdown
+# Retrieve Operation
+
+```python
+from bookshelf.models import Book
+
+# Retrieve all books
+books = Book.objects.all()
+books  # <QuerySet [<Book: 1984 by George Orwell (1949)>]>
+
+# Retrieve individual attributes
+book = books.first()
+book.title, book.author, book.publication_year  # ('1984', 'George Orwell', 1949)

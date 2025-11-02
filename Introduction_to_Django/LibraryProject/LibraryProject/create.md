@@ -1,6 +1,8 @@
-# Here's my code to create
+# Create Operation
 
-Book.objects.create(title = "1984", author = "George Orwell", publication_year = "1949") 
+```python
+from bookshelf.models import Book
 
-
-# result = <Book: Books are 1984 by George Orwell realeased in 1949>
+# Create a Book instance
+book = Book.objects.create(title="1984", author="George Orwell", publication_year=1949)
+book  # <Book: 1984 by George Orwell (1949)>
