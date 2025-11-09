@@ -22,10 +22,10 @@ class Library(models.Model):
          return f"{self.books} in {self.library_name}"
 class Librarian(models.Model):
     librarian_name = models.CharField(max_length= 100)
-    library = models.OneToOneField(Library, on_delete=models.CASCADE)
+    library_name = models.OneToOneField(Library, on_delete=models.CASCADE)
 
     def __str__(self):
-         return f"{self.librarian_name} in {self.library}"
+         return f"{self.librarian_name} in {self.library_name}"
 
     
 
