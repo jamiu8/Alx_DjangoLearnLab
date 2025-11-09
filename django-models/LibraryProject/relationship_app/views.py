@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from relationship_app.models import Book, Author, Library
+from .models import Book, Library
 from django.views.generic import DetailView
 
 # Create your views here.
