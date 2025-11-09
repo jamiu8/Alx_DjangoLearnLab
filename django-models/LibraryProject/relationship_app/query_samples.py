@@ -1,6 +1,8 @@
-from relationship_app.models import Book, Library, Librarian
+from relationship_app.models import Book, Library, Librarian, Author
 
-Book.objects.filter(author = "salmon")
+authe = Author.objects.get(name=author_name)
+    authe.objects.filter(author=author)
+
 
 book = Library.objects.get(name=library_name)
 book.books.all()
