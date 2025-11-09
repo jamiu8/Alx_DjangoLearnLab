@@ -15,11 +15,11 @@ class Book(models.Model):
         return f"{self.title} by {self.author}"
 
 class Library(models.Model):
-    name = models.CharField(max_length= 100)
+    library_name = models.CharField(max_length= 100)
     books = models.ManyToManyField(Book)
 
     def __str__(self):
-         return f"{self.books} in {self.name}"
+         return f"{self.books} in {self.library_name}"
 class Librarian(models.Model):
     librarian_name = models.CharField(max_length= 100)
     library = models.OneToOneField(Library, on_delete=models.CASCADE)
