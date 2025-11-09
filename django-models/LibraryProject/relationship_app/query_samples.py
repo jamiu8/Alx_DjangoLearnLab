@@ -2,7 +2,12 @@ from relationship_app.models import Book, Library, Librarian
 
 Book.objects.filter(author = "salmon")
 
-Library.objects.values_list("book", flat=True)
+books = Library.objects.get(name="library_name")
+books.book.all()
 
-Librarian.objects.all()
+# Library.objects.values_list("book", flat=True)
+
+Libr = Library.objects.get(name="library_name")
+
+Libr.book.all()
 
