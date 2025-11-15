@@ -11,7 +11,7 @@ class BookForm(forms.ModelForm):
             'publication_year': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
-class SearchForm(forms.Form):
+class ExampleForm(forms.Form):
     query = forms.CharField(
         max_length=100,
         required=True,
