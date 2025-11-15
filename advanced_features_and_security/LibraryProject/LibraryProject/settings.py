@@ -136,9 +136,12 @@ SESSION_COOKIE_SECURE = True              # Ensures session cookie is sent only 
 
 # HTTPS settings
 SECURE_SSL_REDIRECT = True                # Redirect HTTP to HTTPS
-SECURE_HSTS_SECONDS = 3600                # HTTP Strict Transport Security (HSTS)
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+
+# HTTP Strict Transport Security (HSTS)
+# Instructs browsers to only access the site over HTTPS
+SECURE_HSTS_SECONDS = 31536000   # 1 year           
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True # apply hsts to all subdomains
+SECURE_HSTS_PRELOAD = True # Allow site to be included in browsers' HSTS preload list
 
 # Content Security Policy using django-csp
 INSTALLED_APPS += ['csp']                 # Add 'csp' app to installed apps
