@@ -17,7 +17,7 @@ admin.site.register(Book)
 
 class CustomUserAdmin(UserAdmin):
     # Fields to display in the admin list view
-    list_display = ('email', 'username', 'date_of_birth', 'profile_photo', 'phone', 'is_staff', 'is_superuser', 'is_active')
+    list_display = ('email', 'date_of_birth', 'profile_photo', 'phone', 'is_staff', 'is_superuser', 'is_active')
     
     # Fields you can filter by in the admin sidebar
     list_filter = ('is_staff', 'is_superuser', 'is_active')
@@ -25,7 +25,7 @@ class CustomUserAdmin(UserAdmin):
     # Fields to show when editing a user
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('username', 'profile_photo', 'date_of_birth', )}),
+        ('Personal info', {'fields': ('profile_photo', 'date_of_birth', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
@@ -34,12 +34,12 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'date_of_birth', 'profile_photo', 'password1', 'password2', 'is_staff', 'is_superuser', 'is_active')}
+            'fields': ('email', 'date_of_birth', 'profile_photo', 'password1', 'password2', 'is_staff', 'is_superuser', 'is_active')}
         ),
     )
     
     # Enable search by email or name
-    search_fields = ('email', 'first_name', 'last_name')
+    search_fields = ('email',)
     
     # Default ordering in admin list view
     ordering = ('email',)
