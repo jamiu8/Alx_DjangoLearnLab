@@ -11,7 +11,7 @@ class Book(models.Model):
     def __str__(self):
         return f"Books are {self.title} by {self.author} realeased in {self.publication_year}"
     
-    class CustomUserManger(BaseUserManager):
+    class CustomUserManager(BaseUserManager):
         def create_user(self, email, password = None, **extra_fields):
             if not email:
                 raise ValueError("Email is required")
