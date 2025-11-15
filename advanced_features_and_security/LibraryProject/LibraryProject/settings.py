@@ -147,3 +147,4 @@ SECURE_HSTS_PRELOAD = True # Allow site to be included in browsers' HSTS preload
 INSTALLED_APPS += ['csp']                 # Add 'csp' app to installed apps
 MIDDLEWARE += ['csp.middleware.CSPMiddleware']  # Add CSP middleware
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')   #  This allows Django to know the original request was HTTPS
