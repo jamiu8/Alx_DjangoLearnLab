@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User, AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import User, AbstractUser, BaseUserManager
 from django.contrib.auth.backends import BaseBackend
 
 # Create your models here.
@@ -27,7 +27,7 @@ class Book(models.Model):
             extra_fields.setdefault('is_staff', True)
             return self.create_user(email, password, **extra_fields)
 
-class CustomUser(AbstractBaseUser):
+class CustomUser(AbstractUser):
     username = models.CharField(max_length= 100)
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField()
