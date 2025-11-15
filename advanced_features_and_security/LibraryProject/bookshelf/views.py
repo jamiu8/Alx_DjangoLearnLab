@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import BookForm
 from django.db.models import Q
 from .models import User
-from .forms import SearchForm
+from .forms import ExampleForm
 
 # Create your views here.
 
@@ -44,7 +44,7 @@ def book_delete(request, pk):
     return redirect('book_list')
 
 def search_user(request):
-    form = SearchForm(request.GET)
+    form = ExampleForm(request.GET)
     users = []
     if form.is_valid():
         query = form.cleaned_data['query']
