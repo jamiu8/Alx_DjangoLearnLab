@@ -125,3 +125,22 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'bookshelf.CustomUser'
+
+SECURE_BROWSER_XSS_FILTER = True          # Activates the browser's XSS protection
+X_FRAME_OPTIONS = 'DENY'                  # Prevent clickjacking
+SECURE_CONTENT_TYPE_NOSNIFF = True        # Stops the browser from guessing content types
+
+# Secure cookies
+CSRF_COOKIE_SECURE = True                 # Ensures CSRF cookie is sent only over HTTPS
+SESSION_COOKIE_SECURE = True              # Ensures session cookie is sent only over HTTPS
+
+# HTTPS settings
+SECURE_SSL_REDIRECT = True                # Redirect HTTP to HTTPS
+SECURE_HSTS_SECONDS = 3600                # HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Content Security Policy using django-csp
+INSTALLED_APPS += ['csp']                 # Add 'csp' app to installed apps
+MIDDLEWARE += ['csp.middleware.CSPMiddleware']  # Add CSP middleware
+

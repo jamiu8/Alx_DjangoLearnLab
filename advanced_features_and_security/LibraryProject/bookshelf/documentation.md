@@ -14,3 +14,12 @@ Groups:
 Usage:
 - Use @permission_required('yourapp.can_<action>', raise_exception=True) in views
 - Assign users to groups via admin or script
+
+
+# SECURITY CONFIGURATIONS
+# DEBUG=False: Never expose debug info in production
+# SECURE_BROWSER_XSS_FILTER=True: Enables browser XSS filter
+# X_FRAME_OPTIONS='DENY': Prevents clickjacking
+# CSRF_COOKIE_SECURE=True: Ensures CSRF cookie is only sent over HTTPS
+# SESSION_COOKIE_SECURE=True: Ensures session cookie is only sent over HTTPS
+# CSP settings: Restrict scripts, styles, and images to trusted sources

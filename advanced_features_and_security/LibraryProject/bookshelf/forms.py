@@ -10,3 +10,10 @@ class BookForm(forms.ModelForm):
             'author': forms.TextInput(attrs={'class': 'form-control'}),
             'publication_year': forms.NumberInput(attrs={'class': 'form-control'}),
         }
+
+class SearchForm(forms.Form):
+    query = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Search users...'})
+    )
