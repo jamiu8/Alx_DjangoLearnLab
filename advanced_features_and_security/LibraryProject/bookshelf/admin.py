@@ -11,7 +11,7 @@ class Bookadmin(admin.ModelAdmin):
     list_filter = ('title', 'author', 'publication_year')
 
 admin.site.register(Book)
-from django.contrib import admin
+
 
 # Register your models here.
 
@@ -46,3 +46,4 @@ class CustomUserAdmin(UserAdmin):
     
     # Enable filter by groups
     filter_horizontal = ('groups', 'user_permissions',)
+admin.site.register(CustomUser, CustomUserAdmin)
