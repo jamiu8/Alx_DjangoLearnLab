@@ -6,7 +6,7 @@ from .models import EmailUser
 
 class CustomUserAdmin(UserAdmin):
     # Fields to display in the admin list view
-    list_display = ('email', 'username', 'dob', 'dp', 'phone', 'is_staff', 'is_superuser', 'is_active')
+    list_display = ('email', 'username', 'date_of_birth', 'profile_photo', 'phone', 'is_staff', 'is_superuser', 'is_active')
     
     # Fields you can filter by in the admin sidebar
     list_filter = ('is_staff', 'is_superuser', 'is_active')
@@ -14,7 +14,7 @@ class CustomUserAdmin(UserAdmin):
     # Fields to show when editing a user
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('username', 'dp', 'dob', )}),
+        ('Personal info', {'fields': ('username', 'profile_photo', 'date_of_birth', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
@@ -23,7 +23,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'dob', 'dp', 'password1', 'password2', 'is_staff', 'is_superuser', 'is_active')}
+            'fields': ('email', 'username', 'date_of_birth', 'profile_photo', 'password1', 'password2', 'is_staff', 'is_superuser', 'is_active')}
         ),
     )
     

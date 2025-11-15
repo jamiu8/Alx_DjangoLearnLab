@@ -78,8 +78,8 @@ class CustomUserManger(BaseUserManager):
 class EmailUser(AbstractBaseUser):
     username = models.CharField(max_length= 100)
     email = models.EmailField(unique=True)
-    dob = models.DateField()
-    dp = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    date_of_birth = models.DateField()
+    profile_photo = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
 
 
 '''class AuthBack(BaseBackend):
