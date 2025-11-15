@@ -75,7 +75,7 @@ class CustomUserManger(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         return self.create_user(email, password, **extra_fields)
 
-class EmailUser(AbstractBaseUser):
+class CustomUser(AbstractBaseUser):
     username = models.CharField(max_length= 100)
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField()
