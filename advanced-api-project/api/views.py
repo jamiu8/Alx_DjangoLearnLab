@@ -4,6 +4,7 @@ from .models import Book
 from .serializers import BookSerializer
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters import rest_framework as filters
+from django_filters import rest_framework as filters
 # Create your views here.
 
 class BookListView(generics.ListAPIView):
